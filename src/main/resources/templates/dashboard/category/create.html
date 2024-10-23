@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{dashboard/layout}"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body layout:fragment="layout">
+  <form class="container" method="post">
+    <div class="form-group">
+      <input name="name" type="text" class="form-control"/>
+      <input type="submit" class="btn btn-success my-3" value="Create">
+    </div>
+  </form>
+</body>
+</html>

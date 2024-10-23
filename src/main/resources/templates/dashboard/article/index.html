@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{dashboard/layout}"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body layout:fragment="layout">
+  <div class="container-fluid">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Category</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="article : ${articles}">
+        <th th:text="${article.id}" scope="row">1</th>
+        <td th:text="${article.title}">Mark</td>
+        <td>
+          <img width="80" height="80" th:src="${article.photoUrl}" />
+        </td>
+        <td th:text="${article.category.name}">@mdo</td>
+        <td>
+          <a class="btn btn-warning" href="">Edit</a>
+          <a class="btn btn-danger" href="">Remove</a>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
